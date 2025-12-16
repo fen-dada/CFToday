@@ -1,4 +1,5 @@
 import SwiftUI
+import WidgetKit
 
 struct ContestsView: View {
 
@@ -15,13 +16,29 @@ struct ContestsView: View {
             let all = try await CodeforcesAPI.fetchContests()
             let now = Date().timeIntervalSince1970
 
-            // 只保留 Running/Upcoming，按距离现在升序
-            contests = all
+            let filtered = all
                 .filter { $0.phase == "CODING" || $0.phase == "BEFORE" }
                 .sorted { a, b in
                     ContestFormatting.distanceToNow(contest: a, now: now)
                     < ContestFormatting.distanceToNow(contest: b, now: now)
                 }
+
+            contests = filtered
+
+            // ✅ 给小组件写入“下一场比赛”（Running 优先，否则 Upcoming）
+            if let next = filtered.first {
+                let widgetContest = WidgetContest(
+                    id: next.id,
+                    name: next.name,
+                    startTime: next.startTimeSeconds.map { Date(timeIntervalSince1970: TimeInterval($0)) },
+                    phase: next.phase
+                )
+
+                SharedContestStore.save(widgetContest)
+
+                // ✅ 通知 widget 立刻刷新（避免等 30 分钟）
+                WidgetCenter.shared.reloadTimelines(ofKind: "CFTodayWidget")
+            }
 
         } catch {
             print("Failed to load contests:", error)

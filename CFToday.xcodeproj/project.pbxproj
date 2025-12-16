@@ -10,6 +10,8 @@
 		8EAC980F2EF194B4004605AE /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAC980E2EF194B3004605AE /* WidgetKit.framework */; };
 		8EAC98112EF194B4004605AE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAC98102EF194B4004605AE /* SwiftUI.framework */; };
 		8EAC98202EF194B6004605AE /* CFTodayWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8EAC980C2EF194B3004605AE /* CFTodayWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8EAC982B2EF1B81E004605AE /* SharedContestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC982A2EF1B81E004605AE /* SharedContestStore.swift */; };
+		8EAC982C2EF1B81E004605AE /* SharedContestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAC982A2EF1B81E004605AE /* SharedContestStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		8EAC980C2EF194B3004605AE /* CFTodayWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CFTodayWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EAC980E2EF194B3004605AE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		8EAC98102EF194B4004605AE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		8EAC98282EF1B782004605AE /* CFTodayWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CFTodayWidgetExtension.entitlements; sourceTree = "<group>"; };
+		8EAC982A2EF1B81E004605AE /* SharedContestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedContestStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -92,6 +96,8 @@
 		8EAC97E32EF12DBE004605AE = {
 			isa = PBXGroup;
 			children = (
+				8EAC982A2EF1B81E004605AE /* SharedContestStore.swift */,
+				8EAC98282EF1B782004605AE /* CFTodayWidgetExtension.entitlements */,
 				8EAC97EE2EF12DBE004605AE /* CFToday */,
 				8EAC98122EF194B4004605AE /* CFTodayWidget */,
 				8EAC980D2EF194B3004605AE /* Frameworks */,
@@ -226,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EAC982B2EF1B81E004605AE /* SharedContestStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EAC982C2EF1B81E004605AE /* SharedContestStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CFToday/CFToday.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QWXT3PMG8X;
@@ -403,6 +412,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CFToday/CFToday.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QWXT3PMG8X;
@@ -435,6 +445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CFTodayWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QWXT3PMG8X;
@@ -465,6 +476,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CFTodayWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QWXT3PMG8X;

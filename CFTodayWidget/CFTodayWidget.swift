@@ -16,14 +16,6 @@ struct ContestEntry: TimelineEntry {
     let contest: WidgetContest?
 }
 
-// MARK: - Widget Model (avoid cross-target dependency)
-
-struct WidgetContest: Identifiable {
-    let id: Int
-    let name: String
-    let startTime: Date?
-    let phase: String
-}
 
 // MARK: - Provider
 
@@ -47,8 +39,17 @@ struct Provider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<ContestEntry>) -> Void) {
         Task {
-            let contest = await fetchNextContest()
+            let cached = SharedContestStore.load()
+            let contest: WidgetContest?
+
+            if let cached {
+                contest = cached
+            } else {
+                contest = await fetchNextContest()
+            }
+
             let entry = ContestEntry(date: Date(), contest: contest)
+
 
             // Refresh every 30 minutes
             let nextRefresh = Date().addingTimeInterval(30 * 60)
