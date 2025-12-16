@@ -6,14 +6,65 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8EAC980F2EF194B4004605AE /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAC980E2EF194B3004605AE /* WidgetKit.framework */; };
+		8EAC98112EF194B4004605AE /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAC98102EF194B4004605AE /* SwiftUI.framework */; };
+		8EAC98202EF194B6004605AE /* CFTodayWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8EAC980C2EF194B3004605AE /* CFTodayWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8EAC981E2EF194B6004605AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EAC97E42EF12DBE004605AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EAC980B2EF194B3004605AE;
+			remoteInfo = CFTodayWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8EAC98252EF194B6004605AE /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8EAC98202EF194B6004605AE /* CFTodayWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8EAC97EC2EF12DBE004605AE /* CFToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CFToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EAC980C2EF194B3004605AE /* CFTodayWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CFTodayWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EAC980E2EF194B3004605AE /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		8EAC98102EF194B4004605AE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8EAC98212EF194B6004605AE /* Exceptions for "CFTodayWidget" folder in "CFTodayWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8EAC980B2EF194B3004605AE /* CFTodayWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8EAC97EE2EF12DBE004605AE /* CFToday */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CFToday;
+			sourceTree = "<group>";
+		};
+		8EAC98122EF194B4004605AE /* CFTodayWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8EAC98212EF194B6004605AE /* Exceptions for "CFTodayWidget" folder in "CFTodayWidgetExtension" target */,
+			);
+			path = CFTodayWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,6 +77,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8EAC98092EF194B3004605AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EAC98112EF194B4004605AE /* SwiftUI.framework in Frameworks */,
+				8EAC980F2EF194B4004605AE /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				8EAC97EE2EF12DBE004605AE /* CFToday */,
+				8EAC98122EF194B4004605AE /* CFTodayWidget */,
+				8EAC980D2EF194B3004605AE /* Frameworks */,
 				8EAC97ED2EF12DBE004605AE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +103,18 @@
 			isa = PBXGroup;
 			children = (
 				8EAC97EC2EF12DBE004605AE /* CFToday.app */,
+				8EAC980C2EF194B3004605AE /* CFTodayWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8EAC980D2EF194B3004605AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8EAC980E2EF194B3004605AE /* WidgetKit.framework */,
+				8EAC98102EF194B4004605AE /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +127,12 @@
 				8EAC97E82EF12DBE004605AE /* Sources */,
 				8EAC97E92EF12DBE004605AE /* Frameworks */,
 				8EAC97EA2EF12DBE004605AE /* Resources */,
+				8EAC98252EF194B6004605AE /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8EAC981F2EF194B6004605AE /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				8EAC97EE2EF12DBE004605AE /* CFToday */,
@@ -69,6 +143,28 @@
 			productName = CFToday;
 			productReference = 8EAC97EC2EF12DBE004605AE /* CFToday.app */;
 			productType = "com.apple.product-type.application";
+		};
+		8EAC980B2EF194B3004605AE /* CFTodayWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EAC98222EF194B6004605AE /* Build configuration list for PBXNativeTarget "CFTodayWidgetExtension" */;
+			buildPhases = (
+				8EAC98082EF194B3004605AE /* Sources */,
+				8EAC98092EF194B3004605AE /* Frameworks */,
+				8EAC980A2EF194B3004605AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8EAC98122EF194B4004605AE /* CFTodayWidget */,
+			);
+			name = CFTodayWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = CFTodayWidgetExtension;
+			productReference = 8EAC980C2EF194B3004605AE /* CFTodayWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +177,9 @@
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					8EAC97EB2EF12DBE004605AE = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					8EAC980B2EF194B3004605AE = {
 						CreatedOnToolsVersion = 26.2;
 					};
 				};
@@ -100,12 +199,20 @@
 			projectRoot = "";
 			targets = (
 				8EAC97EB2EF12DBE004605AE /* CFToday */,
+				8EAC980B2EF194B3004605AE /* CFTodayWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8EAC97EA2EF12DBE004605AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EAC980A2EF194B3004605AE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +229,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8EAC98082EF194B3004605AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8EAC981F2EF194B6004605AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EAC980B2EF194B3004605AE /* CFTodayWidgetExtension */;
+			targetProxy = 8EAC981E2EF194B6004605AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8EAC97F52EF12DC0004605AE /* Debug */ = {
@@ -308,6 +430,66 @@
 			};
 			name = Release;
 		};
+		8EAC98232EF194B6004605AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QWXT3PMG8X;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CFTodayWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CFTodayWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Fendada.CFToday.CFTodayWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8EAC98242EF194B6004605AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QWXT3PMG8X;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CFTodayWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CFTodayWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Fendada.CFToday.CFTodayWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -325,6 +507,15 @@
 			buildConfigurations = (
 				8EAC97F82EF12DC0004605AE /* Debug */,
 				8EAC97F92EF12DC0004605AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EAC98222EF194B6004605AE /* Build configuration list for PBXNativeTarget "CFTodayWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EAC98232EF194B6004605AE /* Debug */,
+				8EAC98242EF194B6004605AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
