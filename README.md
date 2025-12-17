@@ -11,6 +11,7 @@ A lightweight iOS client for Codeforces, built with SwiftUI.
 ## Widget
 <p align="center">
   <img src="pictures/3.png" width="45%" />
+  <img src="pictures/4.png" width="45%" />
 </p>
 
 ---

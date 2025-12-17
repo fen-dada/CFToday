@@ -104,6 +104,14 @@ struct CFTodayWidgetEntryView: View {
                 MediumWidget(entry: entry)
             case .systemLarge:
                 LargeWidget(entry: entry)
+
+            case .accessoryInline:
+                LockInline(entry: entry)
+            case .accessoryCircular:
+                LockCircular(entry: entry)
+            case .accessoryRectangular:
+                LockRectangular(entry: entry)
+
             default:
                 MediumWidget(entry: entry)
             }
@@ -112,6 +120,7 @@ struct CFTodayWidgetEntryView: View {
             Color(.systemBackground)
         }
     }
+
 }
 
 // MARK: - Widget
@@ -125,7 +134,10 @@ struct CFTodayWidget: Widget {
         }
         .configurationDisplayName("Codeforces Next Contest")
         .description("Shows the next Codeforces contest and countdown.")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .supportedFamilies([
+            .systemSmall, .systemMedium, .systemLarge,
+            .accessoryInline, .accessoryCircular, .accessoryRectangular
+        ])
     }
 }
 
@@ -403,6 +415,78 @@ private struct LargeWidget: View {
         }
     }
 }
+
+private struct LockInline: View {
+    let entry: ContestEntry
+
+    var body: some View {
+        if let c = entry.contest {
+            if c.phase == "CODING" {
+                Label("CF: Running", systemImage: "trophy.fill")
+            } else if let start = c.startTime {
+                Label("CF \(start, style: .relative)", systemImage: "trophy.fill")
+            } else {
+                Label("CF: Upcoming", systemImage: "trophy.fill")
+            }
+        } else {
+            Label("CF: No contest", systemImage: "trophy.fill")
+        }
+    }
+}
+
+private struct LockCircular: View {
+    let entry: ContestEntry
+
+    var body: some View {
+        if let c = entry.contest, let start = c.startTime, c.phase == "BEFORE" {
+            // 用系统相对时间，锁屏会自动刷新显示
+            Text(start, style: .relative)
+                .font(.caption2.monospacedDigit())
+                .minimumScaleFactor(0.6)
+        } else if let c = entry.contest, c.phase == "CODING" {
+            Image(systemName: "bolt.fill")
+        } else {
+            Image(systemName: "trophy.fill")
+        }
+    }
+}
+
+private struct LockRectangular: View {
+    let entry: ContestEntry
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            HStack(spacing: 6) {
+                Image(systemName: "trophy.fill")
+                Text("Codeforces")
+            }
+            .font(.caption)
+            .foregroundStyle(.secondary)
+
+            if let c = entry.contest {
+                Text(c.name)
+                    .font(.headline)
+                    .lineLimit(1)
+
+                if c.phase == "CODING" {
+                    Text("Running now")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                } else if let start = c.startTime {
+                    Text(start, style: .relative)
+                        .font(.caption.monospacedDigit())
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                }
+            } else {
+                Text("No upcoming contests")
+                    .font(.headline)
+                    .lineLimit(1)
+            }
+        }
+    }
+}
+
 
 // MARK: - Countdown Bar (Large only)
 
