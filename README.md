@@ -2,6 +2,17 @@
 
 A lightweight iOS client for Codeforces, built with SwiftUI.
 
+## App
+<p align="center">
+  <img src="pictures/1.png" width="45%" />
+  <img src="pictures/2.png" width="45%" />
+</p>
+
+## Widget
+<p align="center">
+  <img src="pictures/3.png" width="45%" />
+</p>
+
 ---
 
 ## Features
@@ -60,7 +71,7 @@ All data is fetched from the official **Codeforces public API**.
   - Custom reminder time (e.g. 10 minutes before start)
 
 - [ ] **Widgets**
-  - Home Screen widget showing next contest and countdown
+  - [x] Home Screen widget showing next contest and countdown
   - Lock Screen widget with contest status
 
 - [ ] **Live Activities / Dynamic Island**
